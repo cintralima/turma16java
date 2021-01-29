@@ -7,22 +7,24 @@ public class contacorrente {
         Scanner ler = new Scanner(System.in);
         
        do {
-            System.out.println("Bem vindo a sua Conta Corrente");
+            System.out.println("\nBem vindo a sua Conta Corrente");
             
-        
-            System.out.printf("\nVocê tem %d taloês disponiveis, deseja solicitar?:",talao);
-            System.out.println("\nDigite 1 - Sim");
-            System.out.println("Digite 2 - Não");
-            opcao = ler.nextInt();
-           
-
+            if (talao>0) {
+                
+                System.out.printf("\nVocê tem %d taloês disponiveis, deseja solicitar?:",talao);
+                System.out.println("\nDigite 1 - Sim");
+                System.out.println("Digite 2 - Não");
+                opcao = ler.nextInt();
+                
+            }
+            
             if(opcao == 1){
                 talao = talao -1;
 
 
             }
 
-            if (talao == 0) {
+            if (talao <=0) {
 
                 System.out.println("---------------------------------------");
                 System.out.println("Você não possui mais talôes disponiveis");
@@ -46,6 +48,11 @@ public class contacorrente {
                     System.out.println("Digite a descrição");
                     descricao = ler.next();
                     saldo = saldo + valor;
+                    System.out.print("\nTransação realizada com sucesso");
+                    System.out.print("\n---------------------------------------");
+                    System.out.printf("\nO saldo atual da sua conta é R$%.2f",saldo);
+                    System.out.print("\n---------------------------------------");
+  
 
     
                 }
@@ -53,7 +60,7 @@ public class contacorrente {
 
                     if (saldo <= 0) {
                         System.out.println("---------------------------------------");
-                        System.out.println("Você não tem saldo para essa transação");
+                        System.out.println("\nVocê não tem saldo para essa transação");
                         System.out.println("---------------------------------------");
                         
                     }
@@ -72,6 +79,10 @@ public class contacorrente {
                         }
                         else{
                             saldo = saldo - valor;
+                            System.out.print("\nTransação realizada com sucesso");
+                            System.out.println("---------------------------------------");                           
+                            System.out.printf("O saldo atual da sua conta é R$%.2f",saldo);
+                            System.out.println("---------------------------------------");
                         }  
                     }
                     
