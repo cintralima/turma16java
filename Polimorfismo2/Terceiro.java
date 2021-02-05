@@ -8,6 +8,10 @@ public class Terceiro extends  Empregado{
         this.acrescimo = acrescimo;
     }
 
+    public Terceiro(String nome, int matricula, int horas, int valorHoras, double acrescimo) {
+        super(nome, matricula, horas, valorHoras);
+        this.acrescimo = acrescimo;
+    }
 
     @Override
     public double salario() {

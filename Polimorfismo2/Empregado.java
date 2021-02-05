@@ -6,6 +6,13 @@ public class Empregado {
     private int horas;
     private int valorHoras;
 
+    public Empregado(String nome, int matricula, int horas, int valorHoras) {
+        this.nome = nome;
+        this.matricula = matricula;
+        this.horas = horas;
+        this.valorHoras = valorHoras;
+    }
+
     public Empregado(String nome){
         this.nome =nome;
         this.nome =nome;
@@ -14,6 +21,17 @@ public class Empregado {
     public Empregado(String nome, int Matricula){
         this.nome =nome;
         this.matricula =matricula;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Empregado{" +
+                "nome='" + nome + '\'' +
+                ", matricula=" + matricula +
+                ", horas=" + horas +
+                ", valorHoras=" + valorHoras +
+                '}';
     }
 
     public double salario(){
