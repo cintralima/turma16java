@@ -6,21 +6,17 @@ public class Cliente {
         this.nome = nome;
     }
 
-    public void sexo(int opcao){
-        if (opcao == 1){
+    public void sexo(int opcao) {
+        if (opcao == 1) {
             this.sexo = "Sr";
         }
-        if (opcao == 2){
+        if (opcao == 2) {
             this.sexo = "Sra";
         }
-        if (opcao == 3){
+        if (opcao == 3) {
             this.sexo = "Srx";
         }
     }
-
-
-
-
 
 
     public String getNome() {

@@ -11,6 +11,7 @@ public class Produto {
     private static Map<Integer, Produto> listaProdutos = new TreeMap<Integer, Produto>();
 
 
+
     public static Map<Integer, Produto> getListaProdutos() {
         return listaProdutos;
     }
@@ -27,7 +28,7 @@ public class Produto {
 
     }
 
-    public void repoeEstoque(){
+    public void repoeEstoque() {
 
         inicio();
 
@@ -52,8 +53,6 @@ public class Produto {
         cadastrarProduto("Chocowhey  ", 23.90, 10, 9);
         cadastrarProduto("Vegan      ", 23.90, 10, 10);
     }
-
-
 
 
     @Override
