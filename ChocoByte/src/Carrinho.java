@@ -37,7 +37,6 @@ public class Carrinho extends Produto {
 
     }
 
-
     public double getValorTotal() {
         return valorTotal;
     }

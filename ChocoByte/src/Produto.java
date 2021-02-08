@@ -11,7 +11,6 @@ public class Produto {
     private static Map<Integer, Produto> listaProdutos = new TreeMap<Integer, Produto>();
 
 
-
     public static Map<Integer, Produto> getListaProdutos() {
         return listaProdutos;
     }

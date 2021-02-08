@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static int validacaoOpcaoSN(){
+    public static int validacaoOpcaoSN() {
 
         Scanner scan = new Scanner(System.in);
         int result;
@@ -11,12 +11,12 @@ public class Main {
             System.out.print("\nResposta: ");
             result = scan.nextInt();
 
-            if(result!= 1 && result!= 2 ){
+            if (result != 1 && result != 2) {
 
                 System.out.print("Operação Inválida, digite [1]-[SIM] / [2]-[NÃO].: ");
             }
 
-        }catch(java.util.InputMismatchException erro) {
+        } catch (java.util.InputMismatchException erro) {
             System.out.print("Ação inválida. Digite um numero Inteiro dentre as opções:  ");
             System.out.print("[1]-[SIM] / [2]-[NÃO].");
             result = 0;
@@ -24,7 +24,8 @@ public class Main {
 
         return result;
     }
-    public static int validacaoSexo(){
+
+    public static int validacaoSexo() {
 
         Scanner scan2 = new Scanner(System.in);
         int result;
@@ -33,12 +34,12 @@ public class Main {
             System.out.print("\nResposta: ");
             result = scan2.nextInt();
 
-            if(result!= 1 && result!= 2 && result!= 3){
+            if (result != 1 && result != 2 && result != 3) {
 
                 System.out.print("Operação Inválida, digite [1]-Masculino / [2]-Feminino / [3]-Outro.: ");
             }
 
-        }catch(java.util.InputMismatchException erro) {
+        } catch (java.util.InputMismatchException erro) {
             System.out.print("Ação inválida. Digite um numero Inteiro dentre as opções:  ");
             System.out.print("[1]-Masculino / [2]-Feminino / [3]-Outro.");
             result = 0;
@@ -46,7 +47,8 @@ public class Main {
 
         return result;
     }
-    public static int validaNumero(){
+
+    public static int validaNumero() {
 
         Scanner scan3 = new Scanner(System.in);
         int result;
@@ -56,7 +58,7 @@ public class Main {
             result = scan3.nextInt();
 
 
-        }catch(java.util.InputMismatchException erro) {
+        } catch (java.util.InputMismatchException erro) {
 
 
             result = 0;
@@ -64,7 +66,8 @@ public class Main {
 
         return result;
     }
-    public static int validacaoPagamento(){
+
+    public static int validacaoPagamento() {
 
         Scanner scan = new Scanner(System.in);
         int result;
@@ -73,12 +76,12 @@ public class Main {
             System.out.print("\nResposta: ");
             result = scan.nextInt();
 
-            if(result!= 1 && result!= 2 && result!= 3 && result!= 4 ){
+            if (result != 1 && result != 2 && result != 3 && result != 4) {
 
                 System.out.print("Operação Inválida, digite [1] ao [4] .: ");
             }
 
-        }catch(java.util.InputMismatchException erro) {
+        } catch (java.util.InputMismatchException erro) {
             System.out.print("Ação inválida. Digite um numero Inteiro dentre as opções: 1 ao 4  ");
             System.out.print("1 ao 4");
             result = 0;
@@ -116,9 +119,9 @@ public class Main {
             System.out.println("\nDigite 1 - Masculino");
             System.out.println("Digite 2 - Feminino");
             System.out.println("Digite 3 - Outros");
-            do{
+            do {
                 sexo = validacaoSexo();
-            }while(sexo != 1 && sexo != 2 && sexo != 3);
+            } while (sexo != 1 && sexo != 2 && sexo != 3);
 
 
             novoCliente.sexo(sexo);
@@ -140,24 +143,23 @@ public class Main {
                     System.out.print("\nInsira o Codigo do produto que deseja comprar:");
                     codigo = validaNumero();
 
-                    if(Produto.getListaProdutos().containsKey(codigo) != true) {
+                    if (Produto.getListaProdutos().containsKey(codigo) != true) {
                         System.out.println("Codigo invalido");
                     }
 
-                }while(Produto.getListaProdutos().containsKey(codigo) != true);
-
+                } while (Produto.getListaProdutos().containsKey(codigo) != true);
 
 
                 do {
                     do {
                         System.out.print("\nDigite a quantidade que deseja comprar:");
                         quantidade = ler.nextInt();
-                        if (quantidade == 0){
+                        if (quantidade == 0 || quantidade < 0) {
                             System.out.println("Quandidade invalida. Digite quantidade acima de Zero");
 
                         }
 
-                    }while(quantidade == 0);
+                    } while (quantidade == 0 || quantidade < 0);
 
 
                     if (quantidade <= Produto.getListaProdutos().get(codigo).getEstoque()) {
@@ -168,7 +170,7 @@ public class Main {
                         do {
                             opcao = validacaoOpcaoSN();
 
-                        }while(opcao!=1 && opcao!= 2);
+                        } while (opcao != 1 && opcao != 2);
 
 
                         if (opcao == 1) {
@@ -192,11 +194,10 @@ public class Main {
 
                 System.out.print("\nDigite 1 - Comprar mais produtos");
                 System.out.print("\nDigite 2 - Finalizar Comprar");
-                do{
+                do {
                     opcao = validacaoOpcaoSN();
 
-                }while (opcao != 1 && opcao != 2 );
-
+                } while (opcao != 1 && opcao != 2);
 
 
             } while (opcao == 1);
@@ -224,7 +225,7 @@ public class Main {
             do {
                 opcao = validacaoPagamento();
 
-            }while (opcao!= 1 && opcao!= 2 && opcao!= 3 && opcao!= 4);
+            } while (opcao != 1 && opcao != 2 && opcao != 3 && opcao != 4);
 
 
             if (opcao == 1) {
@@ -287,7 +288,7 @@ public class Main {
                 for (Produto key : carrinho.getCarrinho().values()) {
                     System.out.println(key.getNome() + "\t" + key.getValor() + "\t" + key.getCompras());
                 }
-                System.out.printf("Valor Pago 1/3 \t\tR$%.2f\n", carrinho.carrinho3x());
+                System.out.printf("Valor Pago  1/3 \t\tR$%.2f\n", carrinho.carrinho3x());
                 System.out.printf("Valor Imposto \t\tR$%.2f\n", carrinho.imposto());
                 System.out.println("-------------------------------------------------------------------------------------");
                 System.out.println("09/02/2021"); //data
@@ -303,8 +304,7 @@ public class Main {
 
                 opcao = validacaoOpcaoSN();
 
-            }while(opcao != 1 && opcao != 2);
-
+            } while (opcao != 1 && opcao != 2);
 
 
             int contador = 0;
@@ -331,3 +331,4 @@ public class Main {
     }
 
 }
+
