@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -62,11 +60,11 @@ public class Carrinho extends Produto {
     }
 
     public double carrinho2x() {
-        return this.valorTotal * 1.1;
+        return (this.valorTotal * 1.1) / 2;
     }
 
     public double carrinho3x() {
-        return this.valorTotal * 1.15;
+        return (this.valorTotal * 1.15) / 3;
     }
 
     public double imposto() {

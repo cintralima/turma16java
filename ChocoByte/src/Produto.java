@@ -27,6 +27,12 @@ public class Produto {
 
     }
 
+    public void repoeEstoque(){
+
+        inicio();
+
+    }
+
     public void cadastrarProduto(String nome, double valor, int estoque, int cod) {
 
         Produto.listaProdutos.put(cod, new Produto(nome, valor, estoque, cod));
@@ -35,12 +41,19 @@ public class Produto {
 
     public void inicio() {
 
-        cadastrarProduto("Camisa", 10.50, 10, 1);
-        cadastrarProduto("Chinelo", 14.50, 10, 2);
-        cadastrarProduto("Bermuda", 34.50, 10, 3);
-        cadastrarProduto("Meia", 14.40, 10, 4);
-        cadastrarProduto("Calça", 45.70, 10, 5);
+        cadastrarProduto("Ao leite   ", 14.90, 10, 1);
+        cadastrarProduto("Branco     ", 15.90, 10, 2);
+        cadastrarProduto("Airado     ", 15.90, 10, 3);
+        cadastrarProduto("Meio Amargo", 18.50, 10, 4);
+        cadastrarProduto("Amargo     ", 19.90, 10, 5);
+        cadastrarProduto("Avelã      ", 19.90, 10, 6);
+        cadastrarProduto("Trufado    ", 22.00, 10, 7);
+        cadastrarProduto("Sem lactose", 23.90, 10, 8);
+        cadastrarProduto("Chocowhey  ", 23.90, 10, 9);
+        cadastrarProduto("Vegan      ", 23.90, 10, 10);
     }
+
+
 
 
     @Override
